@@ -175,7 +175,9 @@ div#upload {
   height: 200px; }
 
 #OUTPUT {
-  text-align: left; }
+  width: 520px;
+  height: 200px;
+  border: 0; }
 
 @media print, screen and (max-width: 960px) {
   div.wrapper {
