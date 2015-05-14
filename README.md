@@ -13,7 +13,21 @@
 
 [![Build Status](https://travis-ci.org/alu0100699968/PL_LDE.svg?branch=master)](https://travis-ci.org/alu0100699968/PL_LDE)
 
-### Gulp
+### Elementos utilizados
+
+#### PEGJS
+
+Utilizado para la creación de las diferentes gramáticas que forman parte del proyecto.
+
+#### Coffee
+
+Utilizado en los tests, app.coffee y www.coffee.
+
+#### Jade
+
+Utilizado en las vistas para generar los HTML.
+
+#### Gulp
 
 Lista de tareas implementadas:
 
