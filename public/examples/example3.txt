@@ -1,8 +1,8 @@
 'Star Wars. Episode V: The Empire Strikes Back',1980{
     'Chicago Sun-Times' [
-        'La mejor de las películas Star Wars y la que más incita a la reflexión. Un espectáculo visual de principio a fin', 4        
+        'La mejor de las películas Star Wars y la que más incita a la reflexión. Un espectáculo visual de principio a fin', 4;      
     ]
     'Entertainment Weekly' [
-        'La mejor de la trilogía. Un estimulante equilibrio de drama, humor y Profundos Pensamientos', 5
+        'La mejor de la trilogía. Un estimulante equilibrio de drama, humor y Profundos Pensamientos', 5;
     ]
 }

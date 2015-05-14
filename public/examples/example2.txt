@@ -1,8 +1,8 @@
 'Mad Max: Furia en la carretera',2015{
     'The Hollywood Reporter' [
-            'Una reinvención brillantemente retorcida. Una aventura de acción delirantemente extraña, un trepidante 'Grand Theft Auto' rediseñado por El Bosco.', 4;
+        'Una reinvención brillantemente retorcida. Una aventura de acción delirantemente extraña, un trepidante "Grand Theft Auto" rediseñado por El Bosco.', 4;
     ]
     'Screendaily' [
-        "La persecución sigue -y sigue y sigue- en 'Mad Max: Fury Road", una apisonadora de película de acción que es implacable, emocionante, agotadora y aturdidora a partes iguales.', 4;
+        'La persecución sigue -y sigue y sigue- en "Mad Max: Fury Road", una apisonadora de película de acción que es implacable, emocionante, agotadora y aturdidora a partes iguales.', 4;
     ]
 }
