@@ -29,8 +29,8 @@ Lista de tareas implementadas:
 
 Jonathan Expósito Martín
 
-Sergio Rodríguez Martín
+Adrián Mesa Jaubert
 
 Juan Antonio Oliva Pérez
 
-Adrián Mesa Jaubert
+Sergio Rodríguez Martín
