@@ -34,9 +34,9 @@ gramaticaHTML = (function() {
 
         peg$c0 = peg$FAILED,
         peg$c1 = [],
-        peg$c2 = function(tit, fec, crit) { return ('<b>'+tit+' ('+fec+')</b><table border 1>'+crit+'</table>'); },
-        peg$c3 = function(n, a) { return ('<tr><td>' + n + '</td>' + a +'</tr>'); },
-        peg$c4 = function(texto, nota) { return ('<td>' +texto + '</td><td>' + nota+'</td>'); },
+        peg$c2 = function(tit, fec, crit) { return ('&lt;b&gt;'+tit+' ('+fec+')&lt;/b&gt;\n&lt;table border 1&gt;'+crit+'\n&lt;/table&gt;'); },
+        peg$c3 = function(n, a) { return ('\n\t&lt;tr&gt;\n\t\t&lt;td&gt;' + n + '&lt;/td&gt;' + a +'\n\t&lt;/tr&gt;'); },
+        peg$c4 = function(texto, nota) { return ('&lt;td&gt;' +texto + '&lt;/td&gt;\n\t\t&lt;td&gt;' + nota+'&lt;/td&gt;'); },
         peg$c5 = /^[ \t\n\r]/,
         peg$c6 = { type: "class", value: "[ \\t\\n\\r]", description: "[ \\t\\n\\r]" },
         peg$c7 = "'",

@@ -4,9 +4,10 @@ $(document).ready(function() {
     var result, source;
   source = INPUT.value;
   try {
+    
     result = JSON.stringify(gramaticaHTML.parse(source), null, 2);
-    result = result.replace("\"<b", "<b");
-    result = result.replace(">\"", "><");
+    result = result.replace("\"&", "&");
+    result = result.replace("gt;\"", "gt;");
   } catch (_error) {
     result = _error;
     result = "<div class=\"error\">" + result + "</div>";
