@@ -1,0 +1,8 @@
+'Marvel Los vengadores',2012{
+    'The Hollywood Reporter' [
+        'Whedon consigue una asombrosa hazaña equilibrando este circo de superhumanos, diseñado para hechizar el corazón geek al mismo tiempo que el de los no fans', 4;
+    ]
+    'Variety' [
+        'Como un modelo de última generación construido de partes reconstituidas, el pletórico, boyante e ingeniosamente entretenido choque de superhéroes de Joss Whedon es un sofisticado escapismo', 3;
+    ]
+}
