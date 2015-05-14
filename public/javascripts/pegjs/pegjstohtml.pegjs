@@ -7,7 +7,7 @@ critica
 contenido
   = texto:LITERAL COMMA nota:NOTA SEMICOLON { return ('&lt;td&gt;' +texto + '&lt;/td&gt;&lt;td&gt;' + nota+'&lt;/td&gt;'); }
 
-_ = $[ \r]*
+_ = $[ \t\n\r]*
 
 LITERAL = _ "\'" literal:$([^']*) "\'" _ { return literal; }
 ANIO = _ date:$([1-2][0-9][0-9][0-9]) _ { return date; }

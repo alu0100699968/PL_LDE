@@ -1,5 +1,5 @@
 head
-  = tit:LITERAL COMMA fec:ANIO LBRACE crit:(critica)+ RBRACE  { return ('<b>'+tit+' ('+fec+')</b><table border 1>'+crit+'</table>'); }
+  = tit:LITERAL COMMA fec:ANIO LBRACE crit:(critica)+ RBRACE  { return ('<b>'+tit+' ('+fec+')</b><table width 512px border 1>'+crit+'</table>'); }
   
 critica
   = n:LITERAL LBRACKET a:(contenido) RBRACKET { return ('<tr><td>' + n + '</td>' + a +'</tr>'); }
@@ -7,7 +7,7 @@ critica
 contenido
   = texto:LITERAL COMMA nota:NOTA SEMICOLON { return ('<td>' +texto + '</td><td>' + nota+'</td>'); }
 
-_ = $[ \r]*
+_ = $[ \t\n\r]*
 
 LITERAL = _ "\'" literal:$([^']*) "\'" _ { return literal; }
 ANIO = _ date:$([1-2][0-9][0-9][0-9]) _ { return date; }
