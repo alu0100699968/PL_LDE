@@ -10,7 +10,7 @@ describe "Rutas", ->
     it "Debe existir una ruta index con el titulo del proyecto", ->
       res.render = (view, vars) ->
           expect(view).equal "index"
-          expect(vars.title).equal "LDE"
+          expect(vars.title).equal "Críticas de Películas"
       routes.index(req, res)
 
 describe "Parser", ->
