@@ -1,5 +1,18 @@
 'use strict';
 $(document).ready(function() {
+  $('#PARSE2').click(function() {
+    var result, source;
+  source = INPUT.value;
+  try {
+    result = JSON.stringify(gramaticaHTML.parse(source), null, 2);
+    result = result.replace("\"<b", "<b");
+    result = result.replace(">\"", "><");
+  } catch (_error) {
+    result = _error;
+    result = "<div class=\"error\">" + result + "</div>";
+  }
+  return OUTPUT.innerHTML = result;
+  });
   var dropZone, fileSelect, handleDragOver, handleDrop, handleFileSelect;
   dropZone = document.getElementById('INPUT');
   handleDrop = function(evt) {
