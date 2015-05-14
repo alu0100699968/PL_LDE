@@ -29,21 +29,21 @@ gramaticaHTMLformato = (function() {
 
         peg$FAILED = {},
 
-        peg$startRuleFunctions = { head: peg$parsehead },
-        peg$startRuleFunction  = peg$parsehead,
+        peg$startRuleFunctions = { pelicula: peg$parsepelicula },
+        peg$startRuleFunction  = peg$parsepelicula,
 
         peg$c0 = peg$FAILED,
         peg$c1 = [],
-        peg$c2 = function(tit, fec, crit) { return ('<b>'+tit+' ('+fec+')</b><table border 1>'+crit+'</table>'); },
-        peg$c3 = function(n, a) { return ('<tr><td>' + n + '</td>' + a +'</tr>'); },
-        peg$c4 = function(texto, nota) { return ('<td>' +texto + '</td><td>' + nota+'</td>'); },
+        peg$c2 = function(tit, anio, crit) { return ('<b>' + tit + ' (' + anio + ') - Nota: ' + sum/cont + '</b><table width 512px border 1>' + crit + '</table>'); },
+        peg$c3 = function(titcrit, conte) { return ('<tr><td>' + titcrit + '</td>' + conte +'</tr>'); },
+        peg$c4 = function(texto, nota) { return ('<td>' + texto + '</td><td>' + nota + '</td>'); },
         peg$c5 = /^[ \t\n\r]/,
         peg$c6 = { type: "class", value: "[ \\t\\n\\r]", description: "[ \\t\\n\\r]" },
         peg$c7 = "'",
         peg$c8 = { type: "literal", value: "'", description: "\"'\"" },
         peg$c9 = /^[^']/,
         peg$c10 = { type: "class", value: "[^']", description: "[^']" },
-        peg$c11 = function(literal) { return literal; },
+        peg$c11 = function(texto) { return texto; },
         peg$c12 = /^[1-2]/,
         peg$c13 = { type: "class", value: "[1-2]", description: "[1-2]" },
         peg$c14 = /^[0-9]/,
@@ -51,7 +51,7 @@ gramaticaHTMLformato = (function() {
         peg$c16 = function(date) { return date; },
         peg$c17 = /^[0-5]/,
         peg$c18 = { type: "class", value: "[0-5]", description: "[0-5]" },
-        peg$c19 = function(nota) { return nota+"/5"; },
+        peg$c19 = function(nota) { cont++; sum = sum + parseInt(nota); return nota+"/5"; },
         peg$c20 = ",",
         peg$c21 = { type: "literal", value: ",", description: "\",\"" },
         peg$c22 = ";",
@@ -231,11 +231,11 @@ gramaticaHTMLformato = (function() {
       );
     }
 
-    function peg$parsehead() {
+    function peg$parsepelicula() {
       var s0, s1, s2, s3, s4, s5, s6;
 
       s0 = peg$currPos;
-      s1 = peg$parseLITERAL();
+      s1 = peg$parseTEXTO();
       if (s1 !== peg$FAILED) {
         s2 = peg$parseCOMMA();
         if (s2 !== peg$FAILED) {
@@ -291,7 +291,7 @@ gramaticaHTMLformato = (function() {
       var s0, s1, s2, s3, s4;
 
       s0 = peg$currPos;
-      s1 = peg$parseLITERAL();
+      s1 = peg$parseTEXTO();
       if (s1 !== peg$FAILED) {
         s2 = peg$parseLBRACKET();
         if (s2 !== peg$FAILED) {
@@ -326,7 +326,7 @@ gramaticaHTMLformato = (function() {
       var s0, s1, s2, s3, s4;
 
       s0 = peg$currPos;
-      s1 = peg$parseLITERAL();
+      s1 = peg$parseTEXTO();
       if (s1 !== peg$FAILED) {
         s2 = peg$parseCOMMA();
         if (s2 !== peg$FAILED) {
@@ -387,7 +387,7 @@ gramaticaHTMLformato = (function() {
       return s0;
     }
 
-    function peg$parseLITERAL() {
+    function peg$parseTEXTO() {
       var s0, s1, s2, s3, s4, s5;
 
       s0 = peg$currPos;
@@ -789,6 +789,11 @@ gramaticaHTMLformato = (function() {
 
       return s0;
     }
+
+
+    var sum = 0
+    var cont = 0
+
 
     peg$result = peg$startRuleFunction();
 

@@ -5,7 +5,9 @@ $(document).ready(function() {
     var result, source;
     source = INPUT.value;
     try {
-      result = JSON.stringify(gramaticaHTML.parse(source), null, 2);
+      result = JSON.stringify(gramaticaHTMLformato.parse(source), null, 2);
+      result = result.replace(/>/g, "&gt;");
+      result = result.replace(/</g, "&lt;");
       result = result.replace("\"&", "&");
       result = result.replace("gt;\"", "gt;");
     } catch (_error) {
@@ -28,6 +30,7 @@ $(document).ready(function() {
     }
     return OUTPUT.innerHTML = result;
   });
+  
   $('#PARSEDOWN').click(function() {
    var result, source;
     source = INPUT.value;

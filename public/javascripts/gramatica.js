@@ -34,8 +34,8 @@ gramatica = (function() {
 
         peg$c0 = peg$FAILED,
         peg$c1 = [],
-        peg$c2 = function(tit, fec, crit) { return {Titulo:tit, Año:fec, Criticas:crit }; },
-        peg$c3 = function(n, a) { return {"Titulo Critica":n, Contenido:a }; },
+        peg$c2 = function(tit, anio, crit) { return {Titulo:tit, Año:anio, Criticas:crit }; },
+        peg$c3 = function(titcrit, conte) { return {"Titulo Critica":titcrit, Contenido:conte }; },
         peg$c4 = function(texto, nota) { return {Texto:texto, Calificacion:nota }; },
         peg$c5 = /^[ \t\n\r]/,
         peg$c6 = { type: "class", value: "[ \\t\\n\\r]", description: "[ \\t\\n\\r]" },
@@ -43,7 +43,7 @@ gramatica = (function() {
         peg$c8 = { type: "literal", value: "'", description: "\"'\"" },
         peg$c9 = /^[^']/,
         peg$c10 = { type: "class", value: "[^']", description: "[^']" },
-        peg$c11 = function(literal) { return literal; },
+        peg$c11 = function(texto) { return texto; },
         peg$c12 = /^[1-2]/,
         peg$c13 = { type: "class", value: "[1-2]", description: "[1-2]" },
         peg$c14 = /^[0-9]/,
@@ -235,7 +235,7 @@ gramatica = (function() {
       var s0, s1, s2, s3, s4, s5, s6;
 
       s0 = peg$currPos;
-      s1 = peg$parseLITERAL();
+      s1 = peg$parseTEXTO();
       if (s1 !== peg$FAILED) {
         s2 = peg$parseCOMMA();
         if (s2 !== peg$FAILED) {
@@ -291,7 +291,7 @@ gramatica = (function() {
       var s0, s1, s2, s3, s4;
 
       s0 = peg$currPos;
-      s1 = peg$parseLITERAL();
+      s1 = peg$parseTEXTO();
       if (s1 !== peg$FAILED) {
         s2 = peg$parseLBRACKET();
         if (s2 !== peg$FAILED) {
@@ -326,7 +326,7 @@ gramatica = (function() {
       var s0, s1, s2, s3, s4;
 
       s0 = peg$currPos;
-      s1 = peg$parseLITERAL();
+      s1 = peg$parseTEXTO();
       if (s1 !== peg$FAILED) {
         s2 = peg$parseCOMMA();
         if (s2 !== peg$FAILED) {
@@ -387,7 +387,7 @@ gramatica = (function() {
       return s0;
     }
 
-    function peg$parseLITERAL() {
+    function peg$parseTEXTO() {
       var s0, s1, s2, s3, s4, s5;
 
       s0 = peg$currPos;
