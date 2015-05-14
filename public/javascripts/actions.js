@@ -28,7 +28,31 @@ $(document).ready(function() {
     }
     return OUTPUT.innerHTML = result;
   });
-  
+  $('#PARSEDOWN').click(function() {
+   var result, source;
+    source = INPUT.value;
+    try {
+      result = JSON.stringify(gramaticaHTMLformato.parse(source), null, 2);
+      result = result.replace("\"<", "<");
+      result = result.replace(">\"", ">");
+      var filename = "Criticas.html";
+      var text = result;
+        var pom = document.createElement('a');
+  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  pom.setAttribute('download', filename);
+
+  pom.style.display = 'none';
+  document.body.appendChild(pom);
+
+  pom.click();
+
+  document.body.removeChild(pom);
+    } catch (_error) {
+      result = _error;
+      result = "<div class=\"error\">" + result + "</div>";
+    }
+    return OUTPUT.innerHTML = result;
+  });
   var dropZone, fileSelect, handleDragOver, handleDrop, handleFileSelect;
   dropZone = document.getElementById('INPUT');
   handleDrop = function(evt) {
