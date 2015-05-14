@@ -23,6 +23,7 @@ module.exports = function(config) {
     files: [
       'public/javascripts/*.js',
       'public/tests/*.coffee',
+      'public/tests/*.js',
       'public/tests/index.html'
     ],
 
@@ -37,7 +38,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'public/tests/index.html': ['html2js']
+      'public/tests/index.html': ['html2js'],
+      '**/*.coffee': ['coffee']
     },
 
 
@@ -71,6 +73,18 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: false,
+
+    coffeePreprocessor: {
+      // options passed to the coffee compiler
+      options: {
+        bare: true,
+        sourceMap: false
+      },
+      // transforming the filenames
+      transformPath: function(path) {
+        return path.replace(/\.coffee$/, '.js');
+      }
+    }
   });
 };

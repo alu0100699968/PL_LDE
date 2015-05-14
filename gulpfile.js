@@ -5,6 +5,7 @@ concat  = require('gulp-concat');
 var del     = require('del');
 var minifyHTML = require('gulp-minify-html');
 var minifyCSS  = require('gulp-minify-css');
+var run = require('gulp-run');
 var karma = require('karma').server;
 
 gulp.task('minify', function () {
@@ -29,16 +30,10 @@ gulp.task('clean', function(cb) {
   del(['minified/*'], cb);
 });
 
-gulp.task('tests', function(done) {
-  return karma.start({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done);
+gulp.task('tests', function() {
+  run('mocha --compilers coffee:coffee-script/register -R spec public/tests/tests.coffee').exec()
 });
 
 gulp.task('default', function(done) {
-  return karma.start({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done);
+  run('mocha --compilers coffee:coffee-script/register -R spec public/tests/tests.coffee').exec()
 });
