@@ -10,4 +10,4 @@ router = express.Router()
 module.exports =
   index: (req, res) ->
     res.render 'index',
-          title: 'LDE'
+          title: 'Críticas de Películas'
